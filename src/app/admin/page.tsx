@@ -5,15 +5,22 @@ import { users, bulletinPosts, events } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 export default async function AdminDashboard() {
-  // Fetch real counts from DB
-  const allUsers = await db.select().from(users);
-  const userCount = allUsers.length;
+  let userCount = 0;
+  let postCount = 0;
+  let eventCount = 0;
   
-  const allPosts = await db.select().from(bulletinPosts);
-  const postCount = allPosts.length;
-  
-  const allEvents = await db.select().from(events);
-  const eventCount = allEvents.length;
+  try {
+    const allUsers = await db.select().from(users);
+    userCount = allUsers.length;
+    
+    const allPosts = await db.select().from(bulletinPosts);
+    postCount = allPosts.length;
+    
+    const allEvents = await db.select().from(events);
+    eventCount = allEvents.length;
+  } catch (e) {
+    console.error("DB stats error", e);
+  }
 
   return (
     <div className={styles.container}>
