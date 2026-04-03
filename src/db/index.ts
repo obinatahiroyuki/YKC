@@ -2,8 +2,10 @@ import { drizzle } from 'drizzle-orm/libsql';
 import { createClient } from '@libsql/client';
 import * as schema from './schema';
 
+const localDbUrl = process.env.VERCEL ? 'file:/tmp/local.db' : 'file:./local.db';
+
 const client = createClient({
-  url: process.env.TURSO_DATABASE_URL || 'file:./local.db',
+  url: process.env.TURSO_DATABASE_URL || localDbUrl,
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
