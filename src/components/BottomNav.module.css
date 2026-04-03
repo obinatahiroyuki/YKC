@@ -1,0 +1,39 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #0B192C; /* Dark Navy corresponding to prototype */
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom, 8px);
+  z-index: 50;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #637C9B; /* Dimmed text for inactive */
+  text-decoration: none;
+  font-size: 0.65rem;
+  font-weight: 600;
+  gap: 4px;
+  width: 25%;
+  transition: all 0.2s ease;
+}
+
+.active {
+  color: #3B82F6; /* Active blue from prototype */
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}

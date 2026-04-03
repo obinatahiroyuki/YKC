@@ -1,0 +1,22 @@
+{
+  "name": "YKC Matching & Events",
+  "short_name": "YKC App",
+  "description": "横浜経営者倶楽部 会員専用プラットフォーム",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08111D",
+  "theme_color": "#08111D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

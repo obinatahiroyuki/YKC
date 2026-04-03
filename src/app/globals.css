@@ -1,0 +1,45 @@
+:root {
+  --background: #f8f9fa;
+  --foreground: #202124;
+  --primary: #6c5ce7;
+  --primary-glow: rgba(108, 92, 231, 0.4);
+  --secondary: #a29bfe;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1016;
+    --foreground: #e8eaed;
+    --primary: #8c7bff;
+    --primary-glow: rgba(140, 123, 255, 0.5);
+    --secondary: #b3a5ff;
+    --glass-bg: rgba(20, 21, 28, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base utility for glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}

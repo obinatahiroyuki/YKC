@@ -1,0 +1,14 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0d1b2a; /* Custom dark navy from prototype */
+  color: #fff;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  padding-bottom: 80px; /* Space for Bottom Nav */
+  overflow-y: auto;
+}
