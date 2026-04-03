@@ -29,6 +29,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             role: "ADMIN"
           };
         }
+        if (credentials.email === "nakamura@ykc.yokohama" && credentials.password === "nakamura") {
+          return {
+            id: "temp-admin-nakamura-mock",
+            email: "nakamura@ykc.yokohama",
+            name: "中村",
+            corporateName: "株式会社YKCソリューションズ",
+            role: "ADMIN"
+          };
+        }
 
         try {
           const userResults = await db.select().from(users).where(eq(users.email, credentials.email as string)).limit(1)
